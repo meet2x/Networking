@@ -1,0 +1,20 @@
+1. Importance of Switches
+   - switches are fundamental to networking as they allow devices to connect and communicate
+
+   - Switch         - A device that intelligently directs data packets to the correct device in the network
+     Hub            - A basic networking device that broadcasts data to all connected devices without any intelligent data direction
+     Ethernet Cable - The physical medium that transmits electrical signals between networking devices
+
+   - MAC Address - Unique identifier for devices at Layer 2, used by switches to direct frames
+     IP Address  - Address used at Layer 3 for routing packets; not utilized by switches for directing messages
+     Frame       - Data packet at Layer 2, utilized in switch communication.
+     Packet      - Data unit at Layer 3, used in routing communications across networks.
+     networking messages are categorized as frames (Layer 2) when handled by switches and packets (Layer 3) when addressing routing to IP addresses
+
+   - switches use MAC addresses to make forwarding decisions, stored in a Content Addressable Memory (CAM) table
+     command to know access cam table
+     #enable
+     #show address
+
+   - Wireless access points often operate with the limitations similar to hubs
+     the implications of using wireless connections over wired ones are addressed with an emphasis on security and performance
