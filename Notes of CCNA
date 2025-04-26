@@ -21,3 +21,18 @@
 
    - Wireless access points often operate with the limitations similar to hubs
      the implications of using wireless connections over wired ones are addressed with an emphasis on security and performance
+
+2. router
+   - to connect two different networks we need a router, switch connects the devices which are in it network which is IP 10.1.1.0 to 10.1.1.255 (refer as : 10.1.1.0/25)
+   - different network means different IP addresses range
+   - ruters are layer-3 devices which can handle IP addresses
+
+   - ARP Message
+     to connect with the people which are on the same network we need to ping their corrrsponding IP address,
+     but after ping the IP address the packet need MAC address for routing in layer-2 how it finding the MAC address,
+     by sending ARP message (ARP Packet) which is Address Relation Protocol, which is also same as sending package to the same network
+     after sending ARP message in OSI model tab in layer-2 FFFF.FFFF.FFFF is called brodcast address (it is sended to everyone in to the same network) 
+
+   - gateway
+     if we ping the IP address which is not in the same network the request is directly go to gateway which is nothing but router's IP address,
+     the router's MAC address is also get it by sending ARP messages on the network
