@@ -2,7 +2,7 @@
    - switches are fundamental to networking as they allow devices to connect and communicate
 
    - switch         - a device that intelligently directs data packets to the correct device in the network
-     hub            - A basic networking device that broadcasts data to all connected devices without any intelligent data direction
+     hub            - a basic networking device that broadcasts data to all connected devices without any intelligent data direction
      ethernet cable - the physical medium that transmits electrical signals between networking devices
 
    - Frame       (Layer-1) - utilized in switch communication, send data packet at Layer 2
