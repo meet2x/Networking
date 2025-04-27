@@ -23,9 +23,10 @@
      the implications of using wireless connections over wired ones are addressed with an emphasis on security and performance
 
 2. router
-   - to connect two different networks we need a router, switch connects the devices which are in it network which is IP 10.1.1.0 to 10.1.1.255 (refer as : 10.1.1.0/25)
+   - to connect two different networks we need a router, switch connects the devices which are in it network which is IP 10.1.1.0 to 10.1.1.255 (refer as : 10.1.1.0/24)
    - different network means different IP addresses range
    - ruters are layer-3 devices which can handle IP addresses
+   - you can also see which cable is connected and which port and frame is conncted to the router by using stimulation mod and by click on the packages  
 
    - ARP Message
      to connect with the people which are on the same network we need to ping their corrrsponding IP address,
@@ -36,3 +37,16 @@
    - gateway
      if we ping the IP address which is not in the same network the request is directly go to gateway which is nothing but router's IP address,
      the router's MAC address is also get it by sending ARP messages on the network
+     gateway connects to the router after that same ARP message is go throught different network's switch and frame to identify it's MAC address
+     you need to config that in to router section gateway
+
+   - DNS Server (Layer-4)
+     domain name service, it is the collection of the IP addresses corasponding to the URL name user type
+     you need to config that in to router section DNS server
+     same ARP message is send first to the DNS server by using it's IP address and MAC address (called layer-7),
+     but in the ans (which is IP address of the URL typed) of the ARP message (in Inbound PDU Details),
+     after conecting to the DNS server packet don't need to go through all the prosses of finding the MAC address of the connection router, switch and frame
+     
+   - router CLI command to know the IP addresses it hold,
+     #enable
+     #show ip route
