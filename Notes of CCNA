@@ -50,3 +50,22 @@
    - router CLI command to know the IP addresses it hold,
      #enable
      #show ip route
+
+3. networking models
+   - TCP/IP     - every computer support - widely adopted
+     4. APPLICATION  LAYER      - includes protocols
+     3. TRASNSPORT   LAYER      - includes TCP / UDP port numbers
+     2. NETWORK      LAYER      - includes router and ip addresses
+     1. PHYSICAL     LAYER      - includes ethernet cables
+                   - DATA LINK  - includes mac addresses
+                   - PHYSICAL   - includers cables
+
+   - OSI models (Open System Interconnect)
+     7. APPLICATION  LAYER      - includes protocols
+     5. PRESENTATION LAYER      
+     4. SECTION      LAYER
+     3. TRASNSPORT   LAYER      - includes TCP / UDP port numbers
+     2. NETWORK      LAYER      - includes router and ip addresses
+     1. PHYSICAL     LAYER      - includes ethernet cables
+                   - DATA LINK  - includes mac addresses
+                   - PHYSICAL   - includers cables
