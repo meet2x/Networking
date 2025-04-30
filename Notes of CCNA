@@ -65,10 +65,10 @@ Networkchunck Youtube Playlist
 
    - OSI models (Open System Interconnect)
      7. APPLICATION  LAYER      - includes protocols
-     5. PRESENTATION LAYER      
-     4. SECTION      LAYER
-     3. TRASNSPORT   LAYER      - includes TCP / UDP port numbers
-     2. NETWORK      LAYER      - includes router and ip addresses
-     1. PHYSICAL     LAYER      - includes ethernet cables
+     6. PRESENTATION LAYER      
+     5. SECTION      LAYER
+     4. TRASNSPORT   LAYER      - includes TCP / UDP port numbers
+     3. NETWORK      LAYER      - includes router and ip addresses
+     2. PHYSICAL     LAYER      - includes ethernet cables
                    - DATA LINK  - includes mac addresses
                    - PHYSICAL   - includers cables
