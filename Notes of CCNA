@@ -43,7 +43,7 @@ Networkchunck Youtube Playlist
      gateway connects to the router after that same ARP message is go throught different network's switch and frame to identify it's MAC address
      you need to config that in to router section gateway
 
-   - DNS Server (Layer-4)
+   - DNS Server (Layer-7)
      domain name service, it is the collection of the IP addresses corasponding to the URL name user type
      you need to config that in to router section DNS server
      same ARP message is send first to the DNS server by using it's IP address and MAC address (called layer-7),
