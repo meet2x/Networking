@@ -12,7 +12,7 @@ Networkchunck Youtube Playlist
      MAC Address (Layer-2) - used by switches to direct frames, unique identifier for devices at Layer 2 
      IP Address  (Layer-3) - not utilized by switches for directing messages, address used at Layer 3 for routing (select the best path) packets
      Packet                - data unit at Layer 3, used in routing (select the best path) communications across networks
-     networking messages are categorized as frames (Layer 2) when handled by switches and packets (Layer 3) when addressing routing to IP addresses
+     networking messages are categorized as frames, (Layer 2) when handled by switches and packets, (Layer 3) when addressing routing to IP addresses
 
    - switches use MAC addresses to make forwarding decisions, stored in a Content Addressable Memory (CAM) table
      CLI command to know access cam table
@@ -72,3 +72,32 @@ Networkchunck Youtube Playlist
      2. PHYSICAL     LAYER      - includes ethernet cables
                    - DATA LINK  - includes mac addresses
                    - PHYSICAL   - includers cables
+
+4. - how the message is include - OSI Model
+     7. APPLICATION  LAYER      - http or https protocol
+     6. PRESENTATION LAYER      - encapsulation and include in application layer
+     5. SECTION      LAYER      - encapsulation and include in application layer
+                                # DATA
+
+
+     4. TRASNSPORT   LAYER      - includes TCP / UDP
+                                  TCP - more reliable if the messgae gets fail to deliver it will deliver message again
+                                  UDP - not more reliable but seen as faster method to transport
+                                  in layer-4 destination port you will see Dest Port 443 which is stand for https traffic
+                                                                           Dest Port 80  which is stand for http traffic
+                                # DATA - INFORMATION OF TRASPORT
+                                # this is called SEGMENT
+
+
+     3. NETWORK      LAYER      - includes router and ip addresses
+                                # DATA - INFORMATION OF TRANSPORT - SENDER AND RECIVER IP ADDRESS
+                                # this is called PACKET
+
+
+     2. DATA LINK    LAYER      - includes mac addresses
+                                # TAILER - DATA - INFORMATION OF TRANSPORT - SENDER AND RECIVER IP ADDRESS - SENDER AND RECIEVER MAC ADDRESS
+                                # this is called FRAME
+
+
+     1. PHYSICAL     LAYER      - includes ethernet cables
+                  
