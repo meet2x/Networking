@@ -75,15 +75,37 @@ Networkchunck Youtube Playlist
 
 4. - how the message is include - OSI Model
      7. APPLICATION  LAYER      - http or https protocol
-     6. PRESENTATION LAYER      - encapsulation and include in application layer
-     5. SECTION      LAYER      - encapsulation and include in application layer
+
+
+     6. PRESENTATION LAYER      - data formate, file types & encryption
+                                - it put data under global standard format like .html .xml .jpg .pdf
+                                - encryption for secutity and SSL (secured soket layer) is done at this layer
+
+
+     5. SECTION      LAYER      - it's role is to start the conversation between web-browser and server make sure this are authenticate and smooth
+                                - once it complete it tares down the conversation
+                                - managing different saction on your computes & servers like google, spotify all
+                                - popular protocols,
+                                  L2TP  - layer 2 turning protocol           - VPN connection
+                                  RTCP  - remort transport control protocol  - helping setup phone calls
+                                  H.245 -                                    - helping setup video calls
+                                  SOCKS - proxy                              - helping in hiding the ip address
                                 # DATA
 
 
      4. TRASNSPORT   LAYER      - includes TCP / UDP
-                                  TCP - more reliable if the messgae gets fail to deliver it will deliver message again
+                                  TCP - Transmission Control Protocol
+                                      - more reliable if the messgae gets fail to deliver it will deliver message again
+                                      - if once the connection is establish and the first information was send to user from the server, it will wait and confirm first that the first information is reached or not
+                                      - if not it will send it again and wait for the confirmation, this is called verification process - raliability
+                                      - before sending any data, first it will check that they know each other, this is called TCP 3 way handshake
+                                      - in other words it is called setting up the connection before exchanging any data
+                                        1. SYN     message  - Syncronisation message                 -  from server to user
+                                        2. SYN ACK message  - Syncronisation Acknowledgement message -  from user   to server
+                                        3. ACK     message  - Acknowledgement message                -  from server to user
                                   UDP - not more reliable but seen as faster method to transport
-                                  in layer-4 destination port you will see Dest Port 443 which is stand for https traffic
+                                - destination ports are also include in this layer which is defined the target of the server
+                                - in layer-4 destination port you will see Dest Port 443 which is stand for https traffic
                                                                            Dest Port 80  which is stand for http traffic
                                 # DATA - INFORMATION OF TRASPORT
                                 # this is called SEGMENT
