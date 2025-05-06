@@ -8,11 +8,11 @@ Networkchunck Youtube Playlist
      hub            - a basic networking device that broadcasts data to all connected devices without any intelligent data direction, it repets the signals that's it
      ethernet cable - the physical medium that transmits electrical signals between networking devices
 
-   - Frame       (Layer-1) - utilized in switch communication, send data packet at Layer 2
+   -             (Layer-1) - physical cables 
      MAC Address (Layer-2) - used by switches to direct frames, unique identifier for devices at Layer 2 
-     IP Address  (Layer-3) - not utilized by switches for directing messages, address used at Layer 3 for routing (select the best path) packets
-     Packet                - data unit at Layer 3, used in routing (select the best path) communications across networks
-     networking messages are categorized as frames, (Layer 2) when handled by switches and packets, (Layer 3) when addressing routing to IP addresses
+     IP Address  (Layer-3) - address used at Layer 3 for routing (select the best path) packets
+     Packet                - data unit at Layer 3 called packet, which is routing (select the best path) communications across networks
+     Networking messages are categorized as frames at Layer 2 (when handled by switches), and as packets at Layer 3 (when routed based on IP addresses)
 
    - switches use MAC addresses to make forwarding decisions, stored in a Content Addressable Memory (CAM) table
      CLI command to know access cam table
@@ -74,7 +74,8 @@ Networkchunck Youtube Playlist
                    - PHYSICAL   - includers cables
 
 4. - how the message is include - OSI Model
-     7. APPLICATION  LAYER      - http or https protocol
+     7. APPLICATION  LAYER      - http, https, DNS protocol
+                                - all application layer has fixed transport layer it uses UDP or TCP or some protocol might uses both
 
 
      6. PRESENTATION LAYER      - data formate, file types & encryption
@@ -104,10 +105,18 @@ Networkchunck Youtube Playlist
                                         2. SYN ACK message  - Syncronisation Acknowledgement message -  from user   to server
                                         3. ACK     message  - Acknowledgement message                -  from server to user
                                   UDP - not more reliable but seen as faster method to transport
-                                - destination ports are also include in this layer which is defined the target of the server
-                                - in layer-4 destination port you will see Dest Port 443 which is stand for https traffic
-                                                                           Dest Port 80  which is stand for http traffic
+                                - ports
+                                  - destination ports are also include in this layer which is defined the target of the server
+                                  - in layer-4 destination port you will see Dest Port 443 which is stand for https traffic
+                                                                             Dest Port 80  which is stand for http  traffic
+                                  - ephemeral port
+                                    - network communication is always 2 way sendr and reciver
+                                    - if we can't consider one port number for reciver means who apply get request from the server because the user is getting data from lot other server at the same time
+                                    - so the device pull one temprary big port number for the communication for each different server this port number is call epheremal port number
+                                    - ephemeral port is connected with the IP address of the user   
+
                                 # DATA - INFORMATION OF TRASPORT
+                                # DATA - UDP/TCP | DESTINATION PORT :443 SOURCE PORT (EPHEMERAL PORT): 57059
                                 # this is called SEGMENT
 
 
@@ -122,4 +131,3 @@ Networkchunck Youtube Playlist
 
 
      1. PHYSICAL     LAYER      - includes ethernet cables
-                  
