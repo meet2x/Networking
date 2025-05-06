@@ -9,7 +9,7 @@ Networkchunck Youtube Playlist
      ethernet cable - the physical medium that transmits electrical signals between networking devices
 
    -             (Layer-1) - physical cables 
-     MAC Address (Layer-2) - used by switches to direct frames, unique identifier for devices at Layer 2 
+     MAC Address (Layer-2) - used by switches to direct frames, unique identifier for devices
      IP Address  (Layer-3) - address used at Layer 3 for routing (select the best path) packets
      Packet                - data unit at Layer 3 called packet, which is routing (select the best path) communications across networks
      Networking messages are categorized as frames at Layer 2 (when handled by switches), and as packets at Layer 3 (when routed based on IP addresses)
