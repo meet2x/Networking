@@ -73,9 +73,14 @@ Networkchunck Youtube Playlist
                    - DATA LINK  - includes mac addresses
                    - PHYSICAL   - includers cables
 
-4. - how the message is include - OSI Model
+4. - what message is include - OSI Model
      7. APPLICATION  LAYER      - http, https, DNS protocol
                                 - all application layer has fixed transport layer it uses UDP or TCP or some protocol might uses both
+                                - HTTP / HTTPS  -  TCP
+                                  DNS           -  TCP / UDP
+                                  FTP           -  TCP
+                                  DHCP          -  UDP
+                                  SIP           -  TCP / UDP
 
 
      6. PRESENTATION LAYER      - data formate, file types & encryption
