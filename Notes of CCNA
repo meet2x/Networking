@@ -38,34 +38,76 @@ Networkchunck Youtube Playlist
        ping 10.1.1.1 (IP Address)
 
 // lacture - 02
-   - router
-   - to connect two different networks we need a router, switch connects the devices which are in it network which is IP 10.1.1.0 to 10.1.1.255 (refer as : 10.1.1.0/24)
-   - different network means different IP addresses range
-   - ruters are layer-3 devices which can handle IP addresses
-   - you can also see which cable is connected and which port and frame is conncted to the router by using stimulation mod and by click on the packages  
 
-   - ARP Message
-     to connect with the people which are on the same network we need to ping their corrrsponding IP address,
-     but after ping the IP address the packet need MAC address for routing in layer-2 how it finding the MAC address,
-     by sending ARP message (ARP Packet) which is Address Relation Protocol, which is also same as sending package to the same network
-     after sending ARP message in OSI model tab in layer-2 FFFF.FFFF.FFFF is called brodcast address (it is sended to everyone in to the same network) 
+   # router (layer-3)
+     - a router is used to connect two or more different networks
+     - a switch connects devices within the same network, such as 10.1.1.0 to 10.1.1.255 — also referred to as 10.1.1.0/24, where /24 means the subnet mask is 255.255.255.0.
+     - different networks means they are on different IP ranges, like 10.1.1.0/24 and 192.168.1.0/24
+     - routers are Layer 3 devices in the OSI model. they handle IP addresses and make routing decisions based on destination IP
+     - in Cisco Packet Tracer, you can use Simulation Mode to inspect how packets travel and which ports, cables, and interfaces are involved
 
-   - gateway
-     if we ping the IP address which is not in the same network the request is directly go to gateway which is nothing but router's IP address,
-     the router's MAC address is also get it by sending ARP messages on the network
-     gateway connects to the router after that same ARP message is go throught different network's switch and frame to identify it's MAC address
-     you need to config that in to router section gateway
+   # subnet
+     - a subnet is like a floor in a building — it divides the whole IP address space (building) into smaller, manageable groups (floors) so each device (room) knows where it belongs
+     - benifits
+       divides a large network into smaller groups, making devices easier to manage.
+       allows control over which subnet can communicate with another — improves security.
+       reduces network traffic by keeping broadcasts within the subnet.
+       helps utilize IP addresses efficiently — avoids wasting addresses.
+       easier troubleshooting — issues are isolated within a subnet, not the entire network.
 
-   - DNS Server (Layer-7)
-     domain name service, it is the collection of the IP addresses corasponding to the URL name user type
-     you need to config that in to router section DNS server
-     same ARP message is send first to the DNS server by using it's IP address and MAC address (called layer-7),
-     but in the ans (which is IP address of the URL typed) of the ARP message (in Inbound PDU Details),
-     after conecting to the DNS server packet don't need to go through all the prosses of finding the MAC address of the connection router, switch and frame
-     
-   - router CLI command to know the IP addresses it hold,
-     #enable
-     #show ip route
+    -  IP address
+       format: 8 bits + 8 bits + 8 bits + 8 bits = 32 bits → This is called IPv4 (most commonly used today) 
+       there is also IPv6, which uses 128 bits and is a newer version with far more addresses
+       in a /24 network:
+         the first 24 bits are reserved for the network (e.g., 10.1.1)
+         the last 8 bits are used for hosts/devices like computer, mobile, etc. (e.g., 10.1.1.1 to 10.1.1.254)
+
+    -  subnet mask
+       a subnet mask shows which part of the IP address is for the network and which is for hosts
+       Example:
+         For IP 192.168.1.10 with subnet mask 255.255.255.0:
+         255.255.255 → Network part → 192.168.1
+         .0 → Host part → devices like .1, .2, .10, up to .254
+         so,
+         Subnet Mask = the dividing line between the network ID and the host ID
+
+    -  reserved Addresses in a Subnet
+       For 10.1.1.0/24:
+       10.1.1.0   → Network ID        (reserved)
+       10.1.1.255 → Broadcast Address (reserved)
+       usable host range → 10.1.1.1 to 10.1.1.254
+       gives us 254 usable IP addresses for devices
+
+   # ARP Message
+     ARP stands for Address Resolution Protocol
+     when communicating within the same network, you ping a device’s IP address
+     however, to send the packet at Layer 2, the sender must know the receiver's MAC address
+     to discover that MAC address, the device sends an ARP request to the network
+     the ARP request is broadcast to all devices (using the special MAC address FF:FF:FF:FF:FF:FF)
+     once the correct device receives the ARP request, it replies with its MAC address, allowing the sender to complete the communication
+
+   # gateway
+     if you ping an IP address that is outside your network, the request is sent to the default gateway
+     the default gateway is typically the router's IP address on your network
+     to communicate with the gateway, your device first sends an ARP request to get the router’s MAC address
+     once the MAC address is known, data is sent to the router, which then forwards it to the destination network
+     on that remote network, a similar ARP process happens to locate the MAC address of the final destination
+     you don’t “configure the gateway in the router” — rather, end devices (PCs) are configured with the IP address of the router as their gateway
+
+   # DNS Server (layer-7)
+     DNS stands for Domain Name System (not “Service” in this case)
+     it translates human-readable domain names (like www.google.com) into IP addresses
+     DNS is an application-layer protocol that typically uses UDP port 53
+     in a network simulation:
+       your PC sends a DNS query to the DNS server’s IP address
+       first, it must resolve the MAC address of the DNS server (via ARP if it's in the same network)
+       once the IP is resolved to a MAC address, the DNS request can be sent
+       the DNS reply contains the IP address of the website you queried
+       note : the ARP message does not return the DNS result — ARP is only used to get MAC addresses, not IP resolution.
+
+     - router CLI command to know the IP addresses it hold or to view routes,
+       #enable
+       #show ip route
 
 3. networking models
    - TCP/IP     - every computer support - widely adopted
