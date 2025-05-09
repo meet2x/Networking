@@ -1,31 +1,44 @@
 Networkchunck Youtube Playlist
    https://youtube.com/playlist?list=PLIhvC56v63IJVXv0GJcl9vO5Z6znCVb1P&feature=shared
 
-1. switches
-   - switches are fundamental to networking as they allow devices to connect and communicate
+// lacture - 01
 
-   - switch         - a device that intelligently directs data packets to the correct device in the network
-     hub            - a basic networking device that broadcasts data to all connected devices without any intelligent data direction, it repets the signals that's it
-     ethernet cable - the physical medium that transmits electrical signals between networking devices
+   # ethernet cable
+     - The physical medium that transmits electrical signals (Layer 1) between networking devices like PCs, switches, routers, etc
 
-   -             (Layer-1) - physical cables 
-     MAC Address (Layer-2) - used by switches to direct frames, unique identifier for devices
-     IP Address  (Layer-3) - address used at Layer 3 for routing (select the best path) packets
-     Packet                - data unit at Layer 3 called packet, which is routing (select the best path) communications across networks
-     Networking messages are categorized as frames at Layer 2 (when handled by switches), and as packets at Layer 3 (when routed based on IP addresses)
+   # hub
+     - a basic networking device that broadcasts incoming data to all connected devices, without intelligent direction
+     - it repeats signals blindly, so it causes more collisions and is inefficient compared to switches
+   
+   # switches
+     - switches are fundamental to networking as they allow devices to connect and communicate efficiently within a local Area Network (LAN)
+     - a device that intelligently directs Ethernet frames to the correct device in the network using MAC addresses
 
-   - switches use MAC addresses to make forwarding decisions, stored in a Content Addressable Memory (CAM) table
-     CLI command to know access cam table
-     #enable
-     #show mac-address-table
+   # Wireless access points
+     - Wireless Access Points (WAPs) can behave similarly to hubs in some modes, especially when configured as bridges or repeaters, broadcasting data without selective forwarding
+     - most modern WAPs do act like switches (smart forwarding), but older or simpler devices may not
+     - using wireless instead of wired has implications on:
+          Security    (e.g., risk of interception, need for encryption like WPA3)
+          Performance (e.g., signal interference, lower speed, higher latency)
 
-   - to send message in cisco pocket tracer in cmd of that switch,
-     ping 10.1.1.1 (IP Address)
+   # Layer references & terms
+       Physical cable (Layer 1) – carries raw bits as electrical or optical signals
+       MAC Address    (Layer 2) – used by switches to forward frames; a unique hardware identifier for network devices
+       IP Address     (Layer 3) – used for routing packets across networks (logical address)
+     - Layer 2 uses frames, Layer 3 uses packets
+     - Networking messages are called frames at Layer 2 (when handled by switches) and packets at Layer 3 (when handled by routers).
 
-   - Wireless access points often operate with the limitations similar to hubs
-     the implications of using wireless connections over wired ones are addressed with an emphasis on security and performance
+   # cam table
+     - switches use MAC addresses to make forwarding decisions, stored in a Content Addressable Memory (CAM) table
+     - CLI command to view MAC address table (Cisco):
+       #enable
+       #show macaddress-table
 
-2. router
+   # Send ping in Cisco Packet Tracer (from device terminal):
+       ping 10.1.1.1 (IP Address)
+
+// lacture - 02
+   - router
    - to connect two different networks we need a router, switch connects the devices which are in it network which is IP 10.1.1.0 to 10.1.1.255 (refer as : 10.1.1.0/24)
    - different network means different IP addresses range
    - ruters are layer-3 devices which can handle IP addresses
