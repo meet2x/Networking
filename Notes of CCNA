@@ -78,7 +78,7 @@ Networkchunck Youtube Playlist
        usable host range → 10.1.1.1 to 10.1.1.254
        gives us 254 usable IP addresses for devices
 
-   # ARP Message
+   # ARP message
      ARP stands for Address Resolution Protocol
      when communicating within the same network, you ping a device’s IP address
      however, to send the packet at Layer 2, the sender must know the receiver's MAC address
