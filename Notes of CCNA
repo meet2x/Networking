@@ -95,7 +95,7 @@ Networkchunck Youtube Playlist
      you don’t “configure the gateway in the router” — rather, end devices (PCs) are configured with the IP address of the router as their gateway
 
    # DNS Server (layer-7)
-     DNS stands for Domain Name System (not “Service” in this case)
+     DNS stands for Domain Name System
      it translates human-readable domain names (like www.google.com) into IP addresses
      DNS is an application-layer protocol that typically uses UDP port 53
      in a network simulation:
