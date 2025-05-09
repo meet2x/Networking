@@ -30,9 +30,9 @@ Networkchunck Youtube Playlist
 
    # cam table
      - switches use MAC addresses to make forwarding decisions, stored in a Content Addressable Memory (CAM) table
-     - CLI command to view MAC address table (Cisco):
+     - CLI command to view MAC address table (cisco):
        #enable
-       #show macaddress-table
+       #show mac address-table
 
    # Send ping in Cisco Packet Tracer (from device terminal):
        ping 10.1.1.1 (IP Address)
