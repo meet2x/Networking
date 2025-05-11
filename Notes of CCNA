@@ -63,7 +63,7 @@ Networkchunck Youtube Playlist
          the last 8 bits are used for hosts/devices like computer, mobile, etc. (e.g., 10.1.1.1 to 10.1.1.254)
 
     -  subnet mask
-       a subnet mask shows which part of the IP address is for the network and which is for hosts
+       a subnet mask shows which part of the IP address is for the network and which is for hosts, without it you can't decide network part and host part
        Example:
          For IP 192.168.1.10 with subnet mask 255.255.255.0:
          255.255.255 → Network part → 192.168.1
@@ -77,6 +77,40 @@ Networkchunck Youtube Playlist
        10.1.1.255 → Broadcast Address (reserved)
        usable host range → 10.1.1.1 to 10.1.1.254
        gives us 254 usable IP addresses for devices
+
+    -  subnetting
+       subnetting = Borrowing bits from host side
+       in a /24 network:
+         the first 24 bits are reserved for the network (e.g., 10.1.1)
+         the last 8 bits are used for hosts/devices like computer, mobile, etc. (e.g., 10.1.1.1 to 10.1.1.254)
+       in a /26 network
+         So instead of using full 8 bits for hosts, you borrow 6 bits for subnetting
+         means it's subnet layer will be 255.255.255.192 and there ip ranges are above
+
+
+    -  IP address binary
+       255.255.255.0       
+       11111111.11111111.11111111.00000000
+
+       192.168.1.0       
+       11000000.10101000.00000001.00000000
+       
+       Subnet Mask Decimal: 255.255.255.192
+       Subnet Mask Binary : 11111111.11111111.11111111.11000000
+
+       if there is /24
+       than from 32 bits we will minus 24 bits and remaining number 8, we will put 8 zeros from the last that we will convert them using
+       Binary is base 2, meaning each bit represents a power of 2  because it is containt 0s and 1s only
+   
+       Binary:     1   1   0   0   0   0   0   0
+       Place:    128  64  32  16   8   4   2   1
+
+       Multiply the bits by their place values
+       1×128 + 1×64 + 0×32 + 0×16 + 0×8 + 0×4 + 0×2 + 0×1 = 192
+
+       so it will give us,
+       255.255.255.192
+
 
    # ARP message
      ARP stands for Address Resolution Protocol
