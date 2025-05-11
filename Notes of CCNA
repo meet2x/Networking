@@ -86,6 +86,15 @@ Networkchunck Youtube Playlist
        in a /26 network
          So instead of using full 8 bits for hosts, you borrow 6 bits for subnetting
          means it's subnet layer will be 255.255.255.192 and there ip ranges are above
+         26 bits = network (building floor)
+         6 bits = host (room on that floor)
+         2⁶ = 64 total addresses per subnet
+          62 usable (1 network ID, 1 broadcast)
+          So /26 gives 4 subnets within a /24
+          192.168.1.0/26 → usable: .1 to .62
+          192.168.1.64/26 → .65 to .126
+          192.168.1.128/26 → .129 to .190
+          192.168.1.192/26 → .193 to .254
 
 
     -  IP address binary
