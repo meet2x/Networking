@@ -73,6 +73,7 @@ Networkchunck Youtube Playlist
 
     -  reserved Addresses in a Subnet
        For 10.1.1.0/24:
+       /24 in the IP address is called CIDR (Classless Inter-Domain Routing)
        10.1.1.0   → Network ID        (reserved)
        10.1.1.255 → Broadcast Address (reserved)
        usable host range → 10.1.1.1 to 10.1.1.254
