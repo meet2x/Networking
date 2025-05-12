@@ -80,7 +80,7 @@ Networkchunck Youtube Playlist
        gives us 254 usable IP addresses for devices
 
     -  subnetting
-       Subnetting = Borrowing bits from the host part to create more subnets
+       subnetting = Borrowing bits from the host part to create more subnets
        in a /24 network:
          24 bits for network, 8 bits for host
          IPs range: 192.168.1.1 to 192.168.1.254
@@ -130,20 +130,20 @@ Networkchunck Youtube Playlist
 
 
    # ARP message
-     ARP stands for Address Resolution Protocol
-     when communicating within the same network, you ping a device’s IP address
-     however, to send the packet at Layer 2, the sender must know the receiver's MAC address
-     to discover that MAC address, the device sends an ARP request to the network
-     the ARP request is broadcast to all devices (using the special MAC address FF:FF:FF:FF:FF:FF)
-     once the correct device receives the ARP request, it replies with its MAC address, allowing the sender to complete the communication
+     - ARP stands for Address Resolution Protocol
+     - when communicating within the same network, you ping a device’s IP address
+     - however, to send the packet at Layer 2, the sender must know the receiver's MAC address
+       to discover that MAC address, the device sends an ARP request to the network
+       the ARP request is broadcast to all devices (using the special MAC address FF:FF:FF:FF:FF:FF)
+       once the correct device receives the ARP request, it replies with its MAC address, allowing the sender to complete the communication
 
    # gateway
-     if you ping an IP address that is outside your network, the request is sent to the default gateway
-     the default gateway is typically the router's IP address on your network
-     to communicate with the gateway, your device first sends an ARP request to get the router’s MAC address
-     once the MAC address is known, data is sent to the router, which then forwards it to the destination network
-     on that remote network, a similar ARP process happens to locate the MAC address of the final destination
-     you don’t “configure the gateway in the router” — rather, end devices (PCs) are configured with the IP address of the router as their gateway
+     - if you ping an IP address that is outside your network, the request is sent to the default gateway
+     - the default gateway is typically the router's IP address on your network
+     - to communicate with the gateway, your device first sends an ARP request to get the router’s MAC address
+       once the MAC address is known, data is sent to the router, which then forwards it to the destination network
+       on that remote network, a similar ARP process happens to locate the MAC address of the final destination
+     - you don’t “configure the gateway in the router” — rather, end devices (PCs) are configured with the IP address of the router as their gateway
 
    # DNS Server (layer-7)
      DNS stands for Domain Name System
@@ -171,13 +171,13 @@ Networkchunck Youtube Playlist
                                 - include DATA LINK and PHYSICAL LAYER   
 
    - OSI models (Open System Interconnect)
-     7. APPLICATION  LAYER      - includes protocols
-     6. PRESENTATION LAYER      
-     5. SECTION      LAYER
-     4. TRASNSPORT   LAYER      - includes TCP / UDP port numbers
-     3. NETWORK      LAYER      - includes router and ip addresses
-     2. DATA LINK               - includes mac addresses
-     1. PHYSICAL                - includers cables              
+     7. APPLICATION  LAYER      - includes protocols HTTP, FTP, DNS, SMTP
+     6. PRESENTATION LAYER      - data format conversion (e.g., encryption, compression)
+     5. SECTION      LAYER      - maintains and controls connections between computers
+     4. TRASNSPORT   LAYER      - manages TCP/UDP port numbers, ensures reliable delivery
+     3. NETWORK      LAYER      - IP addressing and routing (routers, IP addresses)
+     2. DATA LINK               - MAC addresses, switches, frames
+     1. PHYSICAL                - Hardware: Ethernet cables, fiber optics, etc             
                    
 
 4. - what message is include - OSI Model
