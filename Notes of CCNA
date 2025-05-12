@@ -63,55 +63,52 @@ Networkchunck Youtube Playlist
          the last 8 bits are used for hosts/devices like computer, mobile, etc. (e.g., 10.1.1.1 to 10.1.1.254)
 
     -  subnet mask
-       a subnet mask shows which part of the IP address is for the network and which is for hosts, without it you can't decide network part and host part
+       A subnet mask tells you which part of an IP address is the network and which part is for hosts
+       Without it, you can’t tell where the network ends and hosts begin
        Example:
-         For IP 192.168.1.10 with subnet mask 255.255.255.0:
-         255.255.255 → Network part → 192.168.1
-         .0 → Host part → devices like .1, .2, .10, up to .254
-         so,
-         Subnet Mask = the dividing line between the network ID and the host ID
+       For IP 192.168.1.10 with subnet mask 255.255.255.0:
+       255.255.255      → Network part → 192.168.1
+       .0 (last 8 bits) → Host part    → can be .1, .2, .10, up to .254
+       subnet mask = the dividing line between Network ID and Host ID
 
     -  reserved Addresses in a Subnet
-       For 10.1.1.0/24:
-       /24 in the IP address is called CIDR (Classless Inter-Domain Routing)
+       in 10.1.1.0/24:
+       /24 is the CIDR notation (Classless Inter-Domain Routing)
        10.1.1.0   → Network ID        (reserved)
        10.1.1.255 → Broadcast Address (reserved)
        usable host range → 10.1.1.1 to 10.1.1.254
        gives us 254 usable IP addresses for devices
 
     -  subnetting
-       subnetting = Borrowing bits from host side
+       Subnetting = Borrowing bits from the host part to create more subnets
        in a /24 network:
-         the first 24 bits are reserved for the network (e.g., 10.1.1)
-         the last 8 bits are used for hosts/devices like computer, mobile, etc. (e.g., 10.1.1.1 to 10.1.1.254)
+         24 bits for network, 8 bits for host
+         IPs range: 192.168.1.1 to 192.168.1.254
        in a /26 network
-         So instead of using full 8 bits for hosts, you borrow 6 bits for subnetting
-         means it's subnet layer will be 255.255.255.192 and there ip ranges are above
-         26 bits = network (building floor)
-         6 bits = host (room on that floor)
-         2⁶ = 64 total addresses per subnet
-          62 usable (1 network ID, 1 broadcast)
-          So /26 gives 4 subnets within a /24
-          192.168.1.0/26 → usable: .1 to .62
-          192.168.1.64/26 → .65 to .126
-          192.168.1.128/26 → .129 to .190
-          192.168.1.192/26 → .193 to .254
+         you borrow 2 more bits from the host portion
+         subnet mask becomes 255.255.255.192
+         26 bits = network  (building floor)
+         6 bits  = host     (room on that floor)
+         2⁶ = 64 total IPs  (binary is a number system that uses only 0s and 1s, where each position represents a power of 2)
+         62 usable (1 network ID, 1 broadcast)
+         so /26 gives 4 subnets within a /24
+          192.168.1.0/26   →  .1 to .62   (usable)
+          192.168.1.64/26  → .65 to .126  (usable)
+          192.168.1.128/26 → .129 to .190 (usable)
+          192.168.1.192/26 → .193 to .254 (usable)
 
 
     -  IP address binary
-       255.255.255.0       
-       11111111.11111111.11111111.00000000
+       example-1
+       if there is /26,
+       /26 → 26 bits for the network
+       32 − 26 = 6 bits for host = 6 zeros at the end
 
-       192.168.1.0       
-       11000000.10101000.00000001.00000000
-       
-       Subnet Mask Decimal: 255.255.255.192
-       Subnet Mask Binary : 11111111.11111111.11111111.11000000
+       subnet Mask Decimal: 255.255.255.192
+       subnet Mask Binary : 11111111.11111111.11111111.11000000
 
-       if there is /24
-       than from 32 bits we will minus 24 bits and remaining number 8, we will put 8 zeros from the last that we will convert them using
-       Binary is base 2, meaning each bit represents a power of 2  because it is containt 0s and 1s only
-   
+       convert last 8 bits (11000000) to decimal:
+
        Binary:     1   1   0   0   0   0   0   0
        Place:    128  64  32  16   8   4   2   1
 
@@ -120,6 +117,15 @@ Networkchunck Youtube Playlist
 
        so it will give us,
        255.255.255.192
+
+       example-2
+       255.255.255.0       
+       11111111.11111111.11111111.00000000
+
+       example-3
+       192.168.1.0       
+       11000000.10101000.00000001.00000000
+       
 
 
    # ARP message
