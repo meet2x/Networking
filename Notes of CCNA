@@ -180,7 +180,7 @@ Networkchunck Youtube Playlist
      1. PHYSICAL                - Hardware: Ethernet cables, fiber optics, etc             
                    
 
-4. - what message is include - OSI Model
+4. - what message is include    - encapsulation
      7. APPLICATION  LAYER      - http, https, DNS protocol
                                 - all application layer has fixed transport layer it uses UDP or TCP or some protocol might uses both
                                 - HTTP / HTTPS  -  TCP
@@ -195,40 +195,39 @@ Networkchunck Youtube Playlist
                                 - encryption for secutity and SSL (secured soket layer) is done at this layer
 
 
-     5. SECTION      LAYER      - it's role is to start the conversation between web-browser and server make sure this are authenticate and smooth
-                                - once it complete it tares down the conversation
-                                - managing different saction on your computes & servers like google, spotify all
+     5. SECTION      LAYER      - starts and manages sessions between devices (e.g., browser ↔ server)
+                                - handles authentication, session maintenance, and teardown
+                                - used in managing different sessions like Google tab, Spotify tab, etc
                                 - popular protocols,
-                                  L2TP  - layer 2 turning protocol           - VPN connection
-                                  RTCP  - remort transport control protocol  - helping setup phone calls
-                                  H.245 -                                    - helping setup video calls
-                                  SOCKS - proxy                              - helping in hiding the ip address
+                                  L2TP  - layer 2 turning protocol              - VPN connection
+                                  RTCP  - real-time transport control protocol  - helping setup phone calls
+                                  H.245 -                                       - helping setup video calls
+                                  SOCKS - proxy                                 - helping in hiding the ip address
                                 # DATA
 
 
-     4. TRASNSPORT   LAYER      - includes TCP / UDP
+     4. TRASNSPORT   LAYER      - manages end-to-end delivery of data using TCP or UDP
                                   TCP - Transmission Control Protocol
-                                      - more reliable if the messgae gets fail to deliver it will deliver message again
-                                      - if once the connection is establish and the first information was send to user from the server, it will wait and confirm first that the first information is reached or not
-                                      - if not it will send it again and wait for the confirmation, this is called verification process - raliability
-                                      - before sending any data, first it will check that they know each other, this is called TCP 3 way handshake
-                                      - in other words it is called setting up the connection before exchanging any data
+                                      - reliable, ensures delivery
+                                      - Uses TCP 3-way handshake before data transfer    
+                                        in other words it is called setting up the connection before exchanging any data
                                         1. SYN     message  - Syncronisation message                 -  from server to user
                                         2. SYN ACK message  - Syncronisation Acknowledgement message -  from user   to server
                                         3. ACK     message  - Acknowledgement message                -  from server to user
                                   UDP - not more reliable but seen as faster method to transport
+
                                 - ports
-                                  - destination ports are also include in this layer which is defined the target of the server
-                                  - in layer-4 destination port you will see Dest Port 443 which is stand for https traffic
-                                                                             Dest Port 80  which is stand for http  traffic
+                                  - used to target specific applications/service
+                                    example: Port 443 = HTTPS, Port 80 = HTTP
+
                                   - ephemeral port
                                     - network communication is always 2 way sendr and reciver
-                                    - if we can't consider one port number for reciver means who apply get request from the server because the user is getting data from lot other server at the same time
+                                    - if we can't consider one port number for reciver because the user is getting data from lot other server at the same time
                                     - so the device pull one temprary big port number for the communication for each different server this port number is call epheremal port number
                                     - ephemeral port is connected with the IP address of the user   
 
                                 # DATA - INFORMATION OF TRASPORT
-                                # DATA - UDP/TCP | DESTINATION PORT :443 SOURCE PORT (EPHEMERAL PORT): 57059
+                                # DATA - UDP/TCP | DESTINATION PORT: 443 SOURCE PORT (EPHEMERAL PORT): 57059
                                 # this is called SEGMENT
 
 
