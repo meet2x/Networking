@@ -160,7 +160,7 @@ Networkchunck Youtube Playlist
        #enable
        #show ip route
 
-3. networking models
+// lacture - 03
    - TCP/IP     - every computer support - widely adopted
      4. APPLICATION  LAYER      - includes protocols HTTP, FTP, DNS, SMTP
                                 - responsible for user-facing communication
@@ -180,7 +180,8 @@ Networkchunck Youtube Playlist
      1. PHYSICAL                - Hardware: Ethernet cables, fiber optics, etc             
                    
 
-4. - what message is include    - encapsulation
+// lacture - 04 
+   - what message is include    - encapsulation
      7. APPLICATION  LAYER      - http, https, DNS protocol
                                 - all application layer has fixed transport layer it uses UDP or TCP or some protocol might uses both
                                 - HTTP / HTTPS  -  TCP
