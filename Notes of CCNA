@@ -260,4 +260,43 @@ Networkchunck Youtube Playlist
      
    - VLAN (Virtual Local Area Network)
      VLAN stands for Virtual Local Area Network,
-     it's a logical grouping of devices within a larger physical network, allowing devices to communicate as if they are on the same local network, even if they are on different switches.
+     it's a logical grouping of devices within a larger physical network, allowing devices to communicate as if they are on the same local network, even if they are on different switches
+     you use subnetting to assign IP ranges to VLANs, but VLANs themselves are created by configuring switch ports—not by creating subnets
+
+   - VLANs are used to,
+     segment a network into smaller parts
+     improve security
+     reduce broadcast traffic
+     separate departments or functions (e.g HR, Finance, IT)
+
+   # Network Architecture Designs
+     - 2-Tier Network Architecture (Collapsed Core)
+       - Access Layer:
+            regular Layer 2 switches
+            connects to user devices (PCs, printers, etc.)
+       - Distribution Layer:
+            multilayer switches (Layer 3)
+            handles,
+               inter-VLAN routing
+               route filtering
+               ACLs and IPS policies
+               routing protocols
+               redundancy
+       - also connected to routers for external access (e.g., internet)
+       - core functions are often collapsed into this layer in small/medium networks — this is why it's called "Collapsed Core"
+       - best for: Small to medium networks
+      
+     - 3-Tier Network Architecture
+       - Access Layer
+            same as in 2-tier
+       - Distribution Layer
+            still includes multilayer switches
+            handles local traffic policies and aggregation
+       - Core Layer
+            dedicated high-speed Layer 3 switches (core switches)
+            provides fast, redundant backbone routing
+            focus is on speed, reliability, and low latency
+            connects all distribution switches and routes them toward the data center, firewall, or external routers
+       - best for: Large enterprise/campus networks
+
+
