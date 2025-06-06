@@ -298,5 +298,42 @@ Networkchunck Youtube Playlist
             focus is on speed, reliability, and low latency
             connects all distribution switches and routes them toward the data center, firewall, or external routers
        - best for: Large enterprise/campus networks
+      
+   # Types of Ports in Networking Switches
+     - Access Port
+       an access port connects to end devices like PCs, printers, IP phones
+       it carries traffic for only one VLAN (untagged)
+       the switch assigns all incoming and outgoing traffic on that port to a specific VLAN
+       use Case:
+         assigning a desktop computer to VLAN 10
+         simplifies configuration because the port only belongs to one VLAN
+     - Trunk Port
+       a trunk port carries traffic for multiple VLANs
+       frames are tagged with VLAN IDs using protocols like 802.1Q
+       used to connect switches to other switches, or to routers (for inter-VLAN routing)
+       use Case:
+          connecting two switches, each with multiple VLANs
+          connecting a switch to a router (Router-on-a-Stick setup)
+     - Console Port
+       the console port is used for local management of the switch or router
+       it provides out-of-band access to configure the device using a serial connection
+       you typically connect using a console cable and software like PuTTY or Tera Term
+       use Case:
+         initial setup of a switch or router
+         troubleshooting when remote access is down
+         not used for network traffic
+         only accessible physically (or via console server)
+     - Management Port (Out-of-Band Management)
+       a management port is a dedicated ethernet port for managing the device out-of-band
+       it’s separated from the data network and used only for administration
+       use Case:
+         managing the switch from a different network than the one it's switching
+         adding an extra layer of security by isolating management traffic
+       difference from Console Port:
+         console port uses serial (local)
+         management port uses Ethernet (can be remote)
+
+       
+
 
 
