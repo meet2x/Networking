@@ -251,4 +251,13 @@ Networkchunck Youtube Playlist
      Switch	                  - L2	      - connects devices within the same network using MAC addresses
      Router	                  - L3	      - connects different networks using IP addresses (LAN ↔ WAN)
      Multilayer Switch (MLS)	- L3 + L2	- routes and switches internally, handles both IP (L3) and MAC (L2) traffic
+
+   - a multilayer switch is used when,
+     you have multiple VLANs or multiple switches that need to communicate internally at Layer 3
+     you need high-speed routing without sending traffic to a separate router
+     you want to keep internal traffic within your LAN for better performance and lower latency
+     real-world use: Inside large buildings, campuses, or enterprises where VLAN-to-VLAN communication is common and performance is critical
      
+   - VLAN (Virtual Local Area Network)
+     VLAN stands for Virtual Local Area Network,
+     it's a logical grouping of devices within a larger physical network, allowing devices to communicate as if they are on the same local network, even if they are on different switches.
