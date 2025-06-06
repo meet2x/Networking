@@ -243,3 +243,12 @@ Networkchunck Youtube Playlist
 
 
      1. PHYSICAL     LAYER      - includes ethernet cables
+
+// lacture - 05
+   - Network Design Notes: Switches, Multilayer Switches, and Tiered Architectures
+   - i want to connect more devices than a 24-port switch can handle, so i add another switch and interconnect both to a router — but i want to avoid a single point of failure
+     that’s exactly where multilayer switches and tiered network design come into play
+     Switch	                  - L2	      - connects devices within the same network using MAC addresses
+     Router	                  - L3	      - connects different networks using IP addresses (LAN ↔ WAN)
+     Multilayer Switch (MLS)	- L3 + L2	- routes and switches internally, handles both IP (L3) and MAC (L2) traffic
+     
