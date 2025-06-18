@@ -333,6 +333,90 @@ Networkchunck Youtube Playlist
          console port uses serial (local)
          management port uses Ethernet (can be remote)
 
+// lacture - 06
+   - organizations use different types of data centers depending on their size and needs:
+     - small in-house setups
+       like: a single rack in a room or even at home
+       used by: small businesses or testing environments
+
+     - colocation (multi-tenant) data centers
+       like: renting space in a big apartment building with shared facilities
+       you bring your servers; they provide power, cooling, and internet
+
+     - public cloud providers
+       like: renting both the apartment and the furniture — AWS, azure, google cloud provide everything
+       no physical hardware ownership needed
+
+     - hybrid cloud
+       like: living part-time at home, part-time in a hotel
+       a mix of on-premises, colocation, and public cloud resources
+
+   - traditional three-tier data center network design was the old standard for how servers connected inside a data center
+     layers:
+     access layer       - connects directly to servers in racks (Top-of-Rack switches)
+     distribution layer - combines traffic from access layer switches
+     core layer         - high-speed switches that handle data center-wide traffic
+     - the traditional 3-tier network design is most suitable for north-south traffic
+
+   # North-South Traffic
+     main pattern: User → Server → User
+     example: a user requests a webpage → data goes up/down the 3-tier stack
+     Works well when most traffic comes from outside (users)
+
+   # Virtualization and East-West Traffic
+     - virtualization
+       one physical server runs many virtual machines (VMs)
+       each VM can be a different application or service
+       VMs often need to talk to other VMs on different physical servers
+       this internal communication is called east-west traffic
+     - it is faster and more efficient than going back out to the user
+       example : 
+       loading a web page with video
+       user asks: “Show me a web page with a video.”
+       the web VM (front-end) receives the request
+       the web VM says: “The video is stored on another VM.”
+       so, east-west traffic happens,
+       VM A (web) → VM B (video storage)
+       after that,
+       VM A sends the full response back to the user (north-south).
+      
+     - limits of traditional 3-tier design
+       too many hops (layers) for east-west traffic → latency and delays
+       spanning Tree Protocol (STP) blocks backup paths to avoid loops, which means wasted bandwidth, poor use of redundant links
+       not optimized for modern, VM-heavy, east-west traffic
+
+     # Spannig Tree Protocol (STP)
+       a network protocol — meaning a set of rules and instructions programmed into network switch software or firmware
+       you configure it on network switches, and it runs in the background
+       it is operated at layer-2
+
+     # Modern Spine-Leaf Architecture
+       replaces the 3-tier model with two layers
+       - leaf switches:
+         like the new access layer
+         connect directly to servers (or VMs) in racks
+
+       - spine Switches:
+         Connect to all leaf switches in a full mesh, they do not connect to each other
+
+       - key Benefits:
+         only two hops from any server to another → low and predictable latency
+         scalable: Easily add new switches
+         load balanced: all paths can be used (no STP bottlenecks)
+         resilient: redundant paths stay active
+
+       - traditional networks used Layer 2 switching with STP (some links were disabled).
+       - spine-leaf uses Layer 3 routing — no blocked links
+       - uses dynamic routing protocols to balance traffic and avoid delays
+       - loop prevention comes from Layer 3 routing (not STP), which replaces the old Spanning Tree Protocol
+
+   # Overlay Networks (Beyond the Physical)
+     - spine-leaf is the underlay (physical setup).
+     - it is a virtual, software-defined network built on top of the physical network using code (often by SDN systems), configurations, and protocols
+     - overlay networks sit on top, powered by, software-defined networking (SDN)
+     - tools like Cisco ACI, these provide
+         programmable control over traffic, better automation and application delivery, improved management
+
        
 
 
