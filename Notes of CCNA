@@ -382,7 +382,7 @@ Networkchunck Youtube Playlist
       
      - limits of traditional 3-tier design
        too many hops (layers) for east-west traffic → latency and delays
-       spanning Tree Protocol (STP) blocks backup paths to avoid loops, which means wasted bandwidth, poor use of redundant links
+       spanning Tree Protocol (STP) blocks backup paths to avoid loops, which means wasted bandwidth, poor use of redundant links so all traffic is forced to go through fewer paths this creates bottlenecks
        not optimized for modern, VM-heavy, east-west traffic
 
      # Spannig Tree Protocol (STP)
@@ -390,11 +390,6 @@ Networkchunck Youtube Playlist
        you configure it on network switches, and it runs in the background
        it is operated at layer-2
       
-       - STP != Bottlenecks
-         in older networks (like the 3-tier model)
-         you might have 10 links, but STP blocks 4–5 of them to avoid loops, this means you’re not using all your bandwidth
-         and all traffic is forced to go through fewer paths → this creates bottlenecks (traffic congestion)
-
      # Modern Spine-Leaf Architecture
        replaces the 3-tier model with two layers
        - leaf switches:
