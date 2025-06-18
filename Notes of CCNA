@@ -411,7 +411,7 @@ Networkchunck Youtube Playlist
        - loop prevention comes from Layer 3 routing (not STP), which replaces the old Spanning Tree Protocol
 
    # Overlay Networks (Beyond the Physical)
-     - spine-leaf is the underlay (physical setup).
+     - spine-leaf is the underlay (physical setup)
      - it is a virtual, software-defined network built on top of the physical network using code (often by SDN systems), configurations, and protocols
      - overlay networks sit on top, powered by, software-defined networking (SDN)
      - tools like Cisco ACI, these provide
