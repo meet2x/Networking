@@ -167,7 +167,7 @@ Networkchunck Youtube Playlist
      3. TRASNSPORT   LAYER      - manages TCP/UDP port numbers
                                 - ensures data is sent reliably (TCP) or fast (UDP)
      2. NETWORK      LAYER      - includes router and ip addresses
-     1. PHYSICAL     LAYER      - MAC addresses, Ethernet, Wi-Fi, cables 
+     1. PHYSICAL     LAYER      - MAC addresses, ethernet, wi-fi, cables 
                                 - include DATA LINK and PHYSICAL LAYER   
 
    - OSI models (Open System Interconnect)
@@ -193,7 +193,7 @@ Networkchunck Youtube Playlist
 
      6. PRESENTATION LAYER      - data formate, file types & encryption
                                 - it put data under global standard format like .html .xml .jpg .pdf
-                                - encryption for secutity and SSL (secured soket layer) is done at this layer
+                                - encryption for security and SSL (secured soket layer) is done at this layer
 
 
      5. SECTION      LAYER      - starts and manages sessions between devices (e.g., browser ↔ server)
