@@ -412,10 +412,12 @@ Networkchunck Youtube Playlist
 
    # Overlay Networks (Beyond the Physical)
      - spine-leaf is the underlay (physical setup)
+     - overlay networks help transfer data smoothly between servers/VMs built on top of underlay networks
+     - when a user requests data stored on another VM, the overlay helps by providing a faster and optimized path
      - overlay networks is a virtual, software-defined network built on top of the physical network using code (often by SDN systems), configurations, and protocols
      - overlay networks sit on top, powered by, software-defined networking (SDN)
      - tools like Cisco ACI, these provide
-         programmable control over traffic, better automation and application delivery, improved management
+       programmable control over traffic, better automation and application delivery, improved management
 
        
 
