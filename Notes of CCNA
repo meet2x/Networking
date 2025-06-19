@@ -92,8 +92,8 @@ Networkchunck Youtube Playlist
          2⁶ = 64 total IPs  (binary is a number system that uses only 0s and 1s, where each position represents a power of 2)
          62 usable (1 network ID, 1 broadcast)
          so /26 gives 4 subnets within a /24
-          192.168.1.0/26   →  .1 to .62   (usable)
-          192.168.1.64/26  → .65 to .126  (usable)
+          192.168.1.0/26   →   .1 to .62  (usable)
+          192.168.1.64/26  →  .65 to .126 (usable)
           192.168.1.128/26 → .129 to .190 (usable)
           192.168.1.192/26 → .193 to .254 (usable)
         subnet-size math shortcut = Block size = 256 – last-octet value (e.g. 256 – 192 = 64) 
