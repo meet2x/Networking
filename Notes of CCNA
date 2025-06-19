@@ -4,7 +4,7 @@ Networkchunck Youtube Playlist
 // lacture - 01
 
    # ethernet cable
-     - The physical medium that transmits electrical signals (Layer 1) between networking devices like PCs, switches, routers, etc
+     - the physical medium that transmits electrical signals (Layer 1) between networking devices like PCs, switches, routers, etc
 
    # hub
      - a basic networking device that broadcasts incoming data to all connected devices, without intelligent direction
@@ -12,7 +12,7 @@ Networkchunck Youtube Playlist
    
    # switches
      - switches are fundamental to networking as they allow devices to connect and communicate efficiently within a local Area Network (LAN)
-     - a device that intelligently directs Ethernet frames to the correct device in the network using MAC addresses
+     - a device that intelligently directs ethernet frames to the correct device in the network using MAC addresses
 
    # Wireless access points
      - Wireless Access Points (WAPs) can behave similarly to hubs in some modes, especially when configured as bridges or repeaters, broadcasting data without selective forwarding
@@ -43,8 +43,8 @@ Networkchunck Youtube Playlist
      - a router is used to connect two or more different networks
      - a switch connects devices within the same network, such as 10.1.1.0 to 10.1.1.255 — also referred to as 10.1.1.0/24, where /24 means the subnet mask is 255.255.255.0.
      - different networks means they are on different IP ranges, like 10.1.1.0/24 and 192.168.1.0/24
-     - routers are Layer 3 devices in the OSI model. they handle IP addresses and make routing decisions based on destination IP
-     - in Cisco Packet Tracer, you can use Simulation Mode to inspect how packets travel and which ports, cables, and interfaces are involved
+     - routers are layer 3 devices in the OSI model. they handle IP addresses and make routing decisions based on destination IP
+     - in Cisco Packet Tracer, you can use simulation mode to inspect how packets travel and which ports, cables, and interfaces are involved
 
    # subnet
      - a subnet is like a floor in a building — it divides the whole IP address space (building) into smaller, manageable groups (floors) so each device (room) knows where it belongs
@@ -63,15 +63,15 @@ Networkchunck Youtube Playlist
          the last 8 bits are used for hosts/devices like computer, mobile, etc. (e.g., 10.1.1.1 to 10.1.1.254)
 
     -  subnet mask
-       A subnet mask tells you which part of an IP address is the network and which part is for hosts
-       Without it, you can’t tell where the network ends and hosts begin
+       a subnet mask tells you which part of an IP address is the network and which part is for hosts
+       without it, you can’t tell where the network ends and hosts begin
        Example:
-       For IP 192.168.1.10 with subnet mask 255.255.255.0:
+       For IP 192.168.1.10 with subnet mask 255.255.255.0 :
        255.255.255      → Network part → 192.168.1
        .0 (last 8 bits) → Host part    → can be .1, .2, .10, up to .254
        subnet mask = the dividing line between Network ID and Host ID
 
-    -  reserved Addresses in a Subnet
+    -  reserved addresses in a Subnet
        in 10.1.1.0/24:
        /24 is the CIDR notation (Classless Inter-Domain Routing)
        10.1.1.0   → Network ID        (reserved)
