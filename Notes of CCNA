@@ -473,17 +473,21 @@ Networkchunck Youtube Playlist
         high bandwidth: 1 Gbps, 10 Gbps, or more
 
       service Models,
-        E-Line : Point-to-point           (like leased line but Ethernet-based)
+        E-Line : point-to-point           (like leased line but Ethernet-based)
                  E-Line is a point-to-point Ethernet Virtual Connection (EVC) between two customer locations
                  it’s like a leased line, but uses Ethernet technology
-        E-LAN  : Multipoint-to-multipoint (shared LAN-like environment)
+                 best for 2-site connections, Simple, private, high-performance
+        E-LAN  : multipoint-to-multipoint (shared LAN-like environment)
                  a dedicated fiber cable is used to connect the user (customer site) to the provider's facilitya
                  at the provider’s end, this connects to a special switch (called a virtual switch), which is a physical switch already installed by the company at various locations
                  the same setup is used at the other office site as well
-        E-Tree : Hub-and-spoke            (central site communicates with branches)
+                 best when all sites need to talk to each other — like a big virtual LAN
+        E-Tree : hub-and-spoke            (central site communicates with branches)
+                 E-Tree is a type of ethernet service used to connect multiple locations, like a central office (hub) and several branches (spokes)
+                 best when you want a central hub talking to many isolated branches
 
       use case,
-          commonly used for high-speed connections between offices/data centers in the same city
+      commonly used for high-speed connections between offices/data centers in the same city
       cons:
       higher cost
       less suitable for connecting widely dispersed branches
