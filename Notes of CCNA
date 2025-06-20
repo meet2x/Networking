@@ -448,6 +448,7 @@ Networkchunck Youtube Playlist
      uses labels instead of IP addresses for packet forwarding
      provides VPN-like services over shared infrastructure
      operates at Layer 2.5 (between Data Link and Network layers)
+     MPLS VPN: Logically separate traffic over shared MPLS network (not inherently encrypted)
 
      pros:
      connects multiple sites using a single link into the provider's MPLS cloud
@@ -463,60 +464,45 @@ Networkchunck Youtube Playlist
      CE (Customer Edge) Router : at the customer site
      PE (Provider Edge) Router : at the provider’s network, performs MPLS operations
 
-     # Metro-E ( Metro Ethernet ) 
-       provides ethernet-based point-to-point or multipoint connectivity in metropolitan areas
-       key characteristics,
-          operates at Layer 2
-          extends LAN across wide areas
-          fiber optic-based infrastructure
-          high bandwidth: 1 Gbps, 10 Gbps, or more
+   # Metro-E ( Metro Ethernet ) 
+     provides ethernet-based point-to-point or multipoint connectivity in metropolitan areas
+     key characteristics,
+        operates at Layer 2
+        extends LAN across wide areas
+        fiber optic-based infrastructure
+        high bandwidth: 1 Gbps, 10 Gbps, or more
 
       service Models,
-          E-Line : Point-to-point           (like leased line but Ethernet-based)
-          E-LAN  : Multipoint-to-multipoint (shared LAN-like environment)
-          E-Tree : Hub-and-spoke            (central site communicates with branches)
+        E-Line : Point-to-point           (like leased line but Ethernet-based)
+                 E-Line is a point-to-point Ethernet Virtual Connection (EVC) between two customer locations
+                 it’s like a leased line, but uses Ethernet technology
+        E-LAN  : Multipoint-to-multipoint (shared LAN-like environment)
+                 a dedicated fiber cable is used to connect the user (customer site) to the provider's facilitya
+                 at the provider’s end, this connects to a special switch (called a virtual switch), which is a physical switch already installed by the company at various locations
+                 the same setup is used at the other office site as well
+        E-Tree : Hub-and-spoke            (central site communicates with branches)
 
-Use Case:
+      use case,
+          commonly used for high-speed connections between offices/data centers in the same city
+      cons:
+          higher cost
+          less suitable for connecting widely dispersed branches
 
-Commonly used for high-speed connections between offices/data centers in the same city
-
-Drawbacks:
-
-Higher cost
-
-Less suitable for connecting widely dispersed branches
-
-5. Public Internet with Site-to-Site VPNs
-Use Case:
-Small sites (e.g., coffee shops) that can’t afford MPLS or Metro E
-
-Site-to-Site VPN:
-
-Creates encrypted tunnels over the public internet
-
-Connects branch offices securely to corporate networks
-
-Encryption & Authentication:
+   # Public Internet with Site-to-Site VPNs
+     creates encrypted tunnels over the public internet
+connects branch offices securely to corporate networks
 Protects data from interception on untrusted networks
 
 Pros:
-
 Low cost
-
 Flexible and easy to deploy
 
 Cons:
-
 Inconsistent performance due to public internet variability
-
 Lack of robust QoS, which can impact services like VoIP
-
 Encryption overhead and additional configuration complexity
 
 VPN Types:
-
-MPLS VPN: Logically separate traffic over shared MPLS network (not inherently encrypted)
-
 Internet-based Site-to-Site VPN: Adds encryption and security
 
 Note:
