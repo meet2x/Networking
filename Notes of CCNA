@@ -419,6 +419,153 @@ Networkchunck Youtube Playlist
      - tools like Cisco ACI, these provide
        programmable control over traffic, better automation and application delivery, improved management
 
+// lacture - 07
+   # Wide Area Networks (WAN) and Enterprise Connectivity
+     Local Area Networks (LANs) : internal networks within corporate sites or data centers
+     Wide Area Networks  (WANs) : interconnect geographically dispersed sites like branch offices, corporate headquarters, and data centers
+                                  WANs facilitate communication beyond the boundaries of LANs
+
+   # Traditional WAN Technologies
+     leased Lines:
+     point-to-point dedicated circuits leased from carriers to connect corporate offices, data centers, and branch sites
+     common Types:
+        T1 (1.54 Mbps)
+        T3 (~43 Mbps)
+        E1 (European equivalent of T1)
+        E3 (European equivalent of T3)
+
+      pros:
+      consistent, private bandwidth
+      guaranteed latency and performance
+      
+      Cons:
+      expensive and inflexible
+      difficult to scale across multiple sites
+
+   # MPLS ( Multiprotocol Label Switching )
+     a widely adopted WAN technology since the 1990s, still prevalent today
+     how it Works,
+     uses labels instead of IP addresses for packet forwarding
+     provides VPN-like services over shared infrastructure
+     operates at Layer 2.5 (between Data Link and Network layers)
+
+     pros:
+     connects multiple sites using a single link into the provider's MPLS cloud
+     simplifies WAN management
+     offers Quality of Service (QoS) for prioritizing traffic (e.g., VoIP, video conferencing)
+     logical separation of customer traffic through label switching
+
+     cons:
+     higher cost
+     complexity in setup and management
+
+     devices terminology:
+     CE (Customer Edge) Router : at the customer site
+     PE (Provider Edge) Router : at the provider’s network, performs MPLS operations
+
+     # Metro-E ( Metro Ethernet ) 
+       provides ethernet-based point-to-point or multipoint connectivity in metropolitan areas
+       key characteristics,
+          operates at Layer 2
+          extends LAN across wide areas
+          fiber optic-based infrastructure
+          high bandwidth: 1 Gbps, 10 Gbps, or more
+
+      service Models,
+          E-Line : Point-to-point           (like leased line but Ethernet-based)
+          E-LAN  : Multipoint-to-multipoint (shared LAN-like environment)
+          E-Tree : Hub-and-spoke            (central site communicates with branches)
+
+Use Case:
+
+Commonly used for high-speed connections between offices/data centers in the same city
+
+Drawbacks:
+
+Higher cost
+
+Less suitable for connecting widely dispersed branches
+
+5. Public Internet with Site-to-Site VPNs
+Use Case:
+Small sites (e.g., coffee shops) that can’t afford MPLS or Metro E
+
+Site-to-Site VPN:
+
+Creates encrypted tunnels over the public internet
+
+Connects branch offices securely to corporate networks
+
+Encryption & Authentication:
+Protects data from interception on untrusted networks
+
+Pros:
+
+Low cost
+
+Flexible and easy to deploy
+
+Cons:
+
+Inconsistent performance due to public internet variability
+
+Lack of robust QoS, which can impact services like VoIP
+
+Encryption overhead and additional configuration complexity
+
+VPN Types:
+
+MPLS VPN: Logically separate traffic over shared MPLS network (not inherently encrypted)
+
+Internet-based Site-to-Site VPN: Adds encryption and security
+
+Note:
+End-user devices at branch sites don’t require VPN clients. VPNs are managed at the router/firewall level.
+
+6. Emerging Technology: SD-WAN
+Software-Defined WAN (SD-WAN):
+A modern solution that uses software-defined networking to manage WAN connectivity.
+
+How It Works:
+
+Uses public internet, MPLS, and other transport types
+
+Creates a virtual overlay network with centralized control
+
+Routes traffic intelligently based on application performance, path health, and policy
+
+Key Benefits:
+
+Lower cost by utilizing internet links
+
+Improved traffic management, QoS, and application performance
+
+Enhanced security through built-in encryption and segmentation
+
+Direct cloud access from branch sites (e.g., AWS, Azure)
+
+Impact on WAN Design:
+
+Reduces dependence on data center hubs
+
+Matches the modern cloud-first architecture
+
+7. Devices in WAN Infrastructure
+CE (Customer Edge) Router:
+
+Located at customer premises
+
+Connects to WAN provider
+
+PE (Provider Edge) Router:
+
+Located within provider's network
+
+Interfaces with MPLS or Metro Ethernet infrastructure
+
+Performs routing, label switching, and traffic management
+
+
        
 
 
