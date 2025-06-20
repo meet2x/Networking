@@ -485,72 +485,43 @@ Networkchunck Youtube Playlist
       use case,
           commonly used for high-speed connections between offices/data centers in the same city
       cons:
-          higher cost
-          less suitable for connecting widely dispersed branches
+      higher cost
+      less suitable for connecting widely dispersed branches
 
    # Public Internet with Site-to-Site VPNs
      creates encrypted tunnels over the public internet
-connects branch offices securely to corporate networks
-Protects data from interception on untrusted networks
+     connects branch offices securely to corporate networks
+     protects data from interception on untrusted networks
+     internet-based Site-to-Site VPN: Adds encryption and security
 
-Pros:
-Low cost
-Flexible and easy to deploy
+     pros:
+     low cost
+     flexible and easy to deploy
 
-Cons:
-Inconsistent performance due to public internet variability
-Lack of robust QoS, which can impact services like VoIP
-Encryption overhead and additional configuration complexity
+     cons:
+     inconsistent performance due to public internet variability
+     lack of robust QoS, which can impact services like VoIP
+     encryption overhead and additional configuration complexity
 
-VPN Types:
-Internet-based Site-to-Site VPN: Adds encryption and security
+     note:
+     end-user devices at branch sites don’t require VPN clients. VPNs are managed at the router/firewall level
 
-Note:
-End-user devices at branch sites don’t require VPN clients. VPNs are managed at the router/firewall level.
+   # SD-WAN ( Software-Defined WAN )
+     a modern solution that uses software-defined networking to manage WAN connectivity
+     how it works,
+     uses public internet, MPLS, and other transport types
+     creates a virtual overlay network with centralized control
+     routes traffic intelligently based on application performance, path health, and policy
 
-6. Emerging Technology: SD-WAN
-Software-Defined WAN (SD-WAN):
-A modern solution that uses software-defined networking to manage WAN connectivity.
+     pros:   
+     lower cost by utilizing internet links
+     improved traffic management, QoS, and application performance
+     enhanced security through built-in encryption and segmentation
+     direct cloud access from branch sites (e.g., AWS, Azure)
 
-How It Works:
-
-Uses public internet, MPLS, and other transport types
-
-Creates a virtual overlay network with centralized control
-
-Routes traffic intelligently based on application performance, path health, and policy
-
-Key Benefits:
-
-Lower cost by utilizing internet links
-
-Improved traffic management, QoS, and application performance
-
-Enhanced security through built-in encryption and segmentation
-
-Direct cloud access from branch sites (e.g., AWS, Azure)
-
-Impact on WAN Design:
-
-Reduces dependence on data center hubs
-
-Matches the modern cloud-first architecture
-
-7. Devices in WAN Infrastructure
-CE (Customer Edge) Router:
-
-Located at customer premises
-
-Connects to WAN provider
-
-PE (Provider Edge) Router:
-
-Located within provider's network
-
-Interfaces with MPLS or Metro Ethernet infrastructure
-
-Performs routing, label switching, and traffic management
-
+     impact on WAN design:
+     reduces dependence on data center hubs
+     matches the modern cloud-first architecture
 
        
 
