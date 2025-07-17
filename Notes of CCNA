@@ -223,7 +223,7 @@ Networkchunck Youtube Playlist
 
                                   - ephemeral port
                                     - network communication is always 2 way sendr and reciver
-                                    - if we can't consider one port number for reciver because the user is getting data from lot other server at the same time
+                                    - we can't consider one port number for reciver because the user is getting data from lot other server at the same time
                                     - so the device pull one temprary big port number for the communication for each different server this port number is call epheremal port number
                                     - ephemeral port is connected with the IP address of the user   
 
